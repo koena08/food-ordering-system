@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 //Encapsulates logic required to access data sources
 @Repository
-public class CategoryRepository extends JpaRepository<Category, Long> {
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 }

@@ -5,6 +5,9 @@ import com.jumpstart.food_ordering_system.service.CategoryService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
@@ -20,7 +23,13 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<CategoryDTO> getAllCategories() {
-        return categoryService.getAllCategories();
+    public ResponseEntity<List<CategoryDTO>> getAllCategories() {
+        return ResponseEntity.ok(categoryService.getAllCategories());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id) {
+        return ResponseEntity.ok(categoryService.getCategoryById(id));
+    }
+
 }

@@ -1,29 +1,39 @@
 package com.jumpstart.food_ordering_system.service;
+
 import com.jumpstart.food_ordering_system.dto.CategoryDTO;
 import com.jumpstart.food_ordering_system.entity.Category;
+import com.jumpstart.food_ordering_system.exception.CategoryNotFoundException;
 import com.jumpstart.food_ordering_system.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-//Handles business logic & data transformations
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
-    public CategoryServiceImpl(CategoryRepository categoryRepository){
+
+    public CategoryServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 
     @Override
-    public List<CategoryDTO> getAllCategories(){
-        List<Category> categories = categoryRepository.findAll();
+    public List<CategoryDTO> getAllCategories() {
+        return categoryRepository.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+    }
 
-        return categories.stream().map(category -> {
-            CategoryDTO dto = new CategoryDTO();
-            dto.setId(category.getId());
-            dto.setName(category.getName());
-            return dto;
-        }).collect(Collectors.toList());
+    @Override
+    public CategoryDTO getCategoryById(Long id) {
+        Category category = categoryRepository.findById(id)
+                .orElseThrow(() -> new CategoryNotFoundException("Category not found with ID: " + id));
+        return mapToDTO(category);
+    }
+
+    private CategoryDTO mapToDTO(Category category) {
+        CategoryDTO dto = new CategoryDTO();
+        dto.setId(category.getId());
+        dto.setName(category.getName());
+        return dto;
     }
 }

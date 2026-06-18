@@ -53,6 +53,15 @@ public class CategoryServiceImpl implements CategoryService {
         return mapToDTO(updatedCategory);
     }
 
+    //Find record & trigger repo to delete function
+    @Override
+    public void deleteCategory(Long id) {
+        Category category = categoryRepository.findById(id)
+                .orElseThrow(() -> new CategoryNotFoundException("Category not found with ID: " + id));
+
+        categoryRepository.delete(category);
+    }
+
     private CategoryDTO mapToDTO(Category category) {
         CategoryDTO dto = new CategoryDTO();
         dto.setId(category.getId());

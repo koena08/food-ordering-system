@@ -30,6 +30,16 @@ public class CategoryServiceImpl implements CategoryService {
         return mapToDTO(category);
     }
 
+    //Convert incoming DTO into database entity
+    @Override
+    public CategoryDTO addCategory(CategoryDTO dto) {
+        Category category = new Category();
+        category.setName(dto.getName());
+
+        Category savedCategory = categoryRepository.save(category);
+        return mapToDTO(savedCategory);
+    }
+
     private CategoryDTO mapToDTO(Category category) {
         CategoryDTO dto = new CategoryDTO();
         dto.setId(category.getId());

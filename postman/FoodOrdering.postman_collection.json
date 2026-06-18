@@ -1,7 +1,10 @@
 {
   "info": {
+    "_postman_id": "6746cbf7-9a29-4029-8b96-6dcf96d9ec2b",
     "name": "FoodOrdering",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52721738",
+    "_collection_link": "https://go.postman.co/collection/52721738-6746cbf7-9a29-4029-8b96-6dcf96d9ec2b?source=collection_link"
   },
   "item": [
     {
@@ -14,8 +17,13 @@
             "header": [],
             "url": {
               "raw": "{{baseUrl}}/api/category",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "category"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category"
+              ]
             }
           },
           "response": []
@@ -26,9 +34,15 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/category/1",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "category", "1"]
+              "raw": "{{baseUrl}}/api/category/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category",
+                "2"
+              ]
             }
           },
           "response": []
@@ -37,20 +51,25 @@
           "name": "Create Category",
           "request": {
             "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
+            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"Burgers\"\n}"
+              "raw": "{\r\n    \"name\": \"Fries\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{baseUrl}}/api/category",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "category"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category"
+              ]
             }
           },
           "response": []
@@ -59,20 +78,26 @@
           "name": "Update Category",
           "request": {
             "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
+            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"Gourmet Burgers\"\n}"
+              "raw": "{\r\n    \"name\": \"Cheese Fries\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
-              "raw": "{{baseUrl}}/api/category/1",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "category", "1"]
+              "raw": "{{baseUrl}}/api/category/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category",
+                "6"
+              ]
             }
           },
           "response": []
@@ -83,9 +108,15 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/category/1",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "category", "1"]
+              "raw": "{{baseUrl}}/api/category/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "category",
+                "2"
+              ]
             }
           },
           "response": []
@@ -98,22 +129,32 @@
       "listen": "prerequest",
       "script": {
         "type": "text/javascript",
-        "exec": [""]
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
       }
     },
     {
       "listen": "test",
       "script": {
         "type": "text/javascript",
-        "exec": [""]
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
       }
     }
   ],
   "variable": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:8085",
-      "type": "string"
+      "value": "http://localhost:8085"
+    },
+    {
+      "value": ""
     }
   ]
 }

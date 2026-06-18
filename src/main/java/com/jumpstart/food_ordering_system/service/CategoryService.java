@@ -7,6 +7,9 @@ public interface CategoryService {
 
     CategoryDTO getCategoryById(Long id);
     CategoryDTO addCategory(CategoryDTO dto);
+
+    //Requires both ID and new data
+    CategoryDTO updateCategory(Long id, CategoryDTO dto);
 }
 
 

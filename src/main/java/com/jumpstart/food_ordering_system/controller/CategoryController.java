@@ -40,4 +40,11 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.addCategory(dto));
     }
 
+    //Maps the url path variable to the ID
+    //Validates the request body
+    @PutMapping("/{id}")
+    public ResponseEntity<CategoryDTO> updateCategory(@PathVariable Long id, @RequestBody @Valid CategoryDTO dto) {
+        return ResponseEntity.ok(categoryService.updateCategory(id, dto));
+    }
+
 }

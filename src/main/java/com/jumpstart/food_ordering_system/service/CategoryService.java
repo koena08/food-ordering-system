@@ -4,4 +4,15 @@ import java.util.List;
 
 public interface CategoryService {
     List<CategoryDTO> getAllCategories();
+
+    CategoryDTO getCategoryById(Long id);
+    CategoryDTO addCategory(CategoryDTO dto);
+
+    //Requires both ID and new data
+    CategoryDTO updateCategory(Long id, CategoryDTO dto);
+
+    //Method returns void since deleted data doesn't need to be sent back
+    void deleteCategory(Long id);
 }
+
+

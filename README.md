@@ -35,3 +35,13 @@
 > Holds your custom configuration setups, custom bean definitions and system-wide adjustment classes.
 >  ## Exception ->
 > Dedicated to error handling. It stores custom error templates to ensure that when something goes wrong, the API sends back clean, readable error logs.
+
+## Endpoints
+
+| Method | URL                | Body         |
+|--------|--------------------|--------------|
+| POST   | /api/category      | { "name" }   |
+| GET    | /api/category      | -            |
+| GET    | /api/category/{id} | -            |
+| PUT    | /api/category/{id} | { "name" }   |
+| DELETE | /api/category/{id} | -            |

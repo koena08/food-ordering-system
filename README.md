@@ -45,3 +45,19 @@
 | GET    | /api/category/{id} | -            |
 | PUT    | /api/category/{id} | { "name" }   |
 | DELETE | /api/category/{id} | -            |
+
+## API Response Format
+
+All API endpoints have been refactored to return a standard generic wrapper to ensure consistency across the application.
+
+**Sample Response:**
+```json
+{
+  "statusCode": 200,
+  "message": "Category retrieved successfully",
+  "data": {
+    "id": 1,
+    "name": "Burgers"
+  },
+  "timestamp": "2026-06-22T12:55:58"
+}

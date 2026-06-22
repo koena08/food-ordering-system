@@ -34,14 +34,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/category/2",
+              "raw": "{{baseUrl}}/api/category/3",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "api",
                 "category",
-                "2"
+                "3"
               ]
             }
           },
@@ -54,7 +54,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Fries\"\r\n}",
+              "raw": "{\r\n    \"name\": \"Pizza\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -81,7 +81,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Cheese Fries\"\r\n}",
+              "raw": "{\r\n    \"name\": \"Wings\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -89,14 +89,14 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}/api/category/6",
+              "raw": "{{baseUrl}}/api/category/7",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "api",
                 "category",
-                "6"
+                "7"
               ]
             }
           },
@@ -108,14 +108,14 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/category/2",
+              "raw": "{{baseUrl}}/api/category/3",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "api",
                 "category",
-                "2"
+                "3"
               ]
             }
           },

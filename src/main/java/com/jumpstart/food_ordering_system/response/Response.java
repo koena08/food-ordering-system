@@ -17,4 +17,18 @@ public class Response<T> {
     private String message;
     private T data;
     private LocalDateTime timestamp;
+
+    //Static factory methods
+    public static <T> Response<T> success(String message, T data) {
+        return Response.<T>builder()
+                .statusCode(200).message(message).data(data)
+                .timestamp(LocalDateTime.now()).build();
+    }
+
+    public static <T> Response<T> error(int code, String message) {
+        return Response.<T>builder()
+                .statusCode(code).message(message)
+                .timestamp(LocalDateTime.now()).build();
+    }
 }
+

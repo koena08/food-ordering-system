@@ -45,6 +45,46 @@
 | GET    | /api/category/{id} | -            |
 | PUT    | /api/category/{id} | { "name" }   |
 | DELETE | /api/category/{id} | -            |
+| POST   | /api/menu          | { "name", "description", "price", "imageUrl", "categoryId" } |
+| GET    | /api/menu          | - (supports query params: categoryId, search, page, size, sort) |
+| GET    | /api/menu/{id}     | -            |
+| PUT    | /api/menu/{id}     | { "name", "description", "price", "imageUrl", "categoryId" } |
+| DELETE | /api/menu/{id}     | -            |
+
+## Week 2: Menu Module
+
+This module provides full CRUD functionality for menu items with support for pagination, sorting and filtering.
+
+**Example GET Request (Filtered & Paginated):**
+`GET http://localhost:8085/api/menu?categoryId=5&page=0&size=10&sort=price,asc`
+
+**Example Page Response JSON:**
+```json
+{
+  "statusCode": 200,
+  "message": "Menus retrieved successfully",
+  "data": {
+    "content": [
+      {
+        "id": 1,
+        "name": "Classic Burger",
+        "description": "Beef patty",
+        "price": 55.00,
+        "imageUrl": "[https://placehold.co/300](https://placehold.co/300)",
+        "categoryId": 5,
+        "categoryName": "Burgers"
+      }
+    ],
+    "totalElements": 12,
+    "totalPages": 2,
+    "number": 0,
+    "size": 10,
+    "first": true,
+    "last": false
+  },
+  "timestamp": "2026-06-28T18:30:00Z"
+}
+```
 
 ## API Response Format
 
@@ -61,3 +101,4 @@ All API endpoints have been refactored to return a standard generic wrapper to e
   },
   "timestamp": "2026-06-22T12:55:58"
 }
+```
